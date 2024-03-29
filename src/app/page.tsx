@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Weights from "../../components/Weights";
 import CalenderSection from "../../components/CalenderSection";
 import { cn } from "@/lib/utils"
+import Routine from "../../components/Routine";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Weights></Weights>
       <div className={styles.routineSection}>
         <CalenderSection></CalenderSection>
+        <Routine></Routine>
       </div>
     </>
   );
