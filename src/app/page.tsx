@@ -18,10 +18,14 @@ export default function Home() {
       <Navbar></Navbar>
       <Weights></Weights>
       <div className={styles.flexContainer}>
-        <CalenderSection></CalenderSection>
+        <div className={styles.calenderSection}>
+          <CalenderSection />
+        </div>
         <div className={styles.routineContainer}>
           {[0, 1, 2, 3, 4,].map(dayOffset => (
-            <Routine key={dayOffset} dayOffset={dayOffset} />
+            <div key={dayOffset} className={styles.routineDay}>
+              <Routine dayOffset={dayOffset} />
+            </div>
           ))}
         </div>
       </div>

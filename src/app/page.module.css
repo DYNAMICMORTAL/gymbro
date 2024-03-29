@@ -229,14 +229,39 @@
   }
 }
 
-/* .routineSection {
-  max-width: 90%;
-  margin: auto;
-} */
 .flexContainer {
   max-width: 90%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3em;
+}
+.routineDay {
+  max-width: auto;
+  padding-left: 1.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calenderSection {
+  flex: 1;
+  margin-right: 2em;
+}
+
+.routineContainer {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.routineDay {
+  margin-bottom: 0.5em;
+  border-radius: 5px;
 }
