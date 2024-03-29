@@ -11,6 +11,9 @@ export default function Routine({ dayOffset }: { dayOffset: number }) {
     const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'numeric', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('en-GB', options);
 
+    const isFutureDate = date > new Date();
+    const isCurrentDate = date.toDateString() === new Date().toDateString();
+
     useEffect(() => {
         const fetchWorkout = async () => {
             const day = (new Date().getDate() + dayOffset) % 4;
@@ -27,10 +30,13 @@ export default function Routine({ dayOffset }: { dayOffset: number }) {
     }, [dayOffset]);
 
     const handleCheckboxChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (!isCurrentDate) {
+            return;
+        }
+
         setIsDone(event.target.checked);
-        const day = (new Date().getDate() + dayOffset) % 4;
         try {
-            await axios.post(`/api/workout`, { day, isDone: event.target.checked });
+            await axios.post(`/api/dates`, { date: formattedDate, workout, isDone: event.target.checked });
         } catch (error) {
             console.error(error);
         }
@@ -40,7 +46,7 @@ export default function Routine({ dayOffset }: { dayOffset: number }) {
         <div className={style.routineSection}>
             <h6 className={style.todayDate}>Date: {formattedDate}</h6>
             <h6 className={style.todayWorkout}>Workout: {workout}</h6>
-            <input type="checkbox" checked={isDone} onChange={handleCheckboxChange} />
+            <input type="checkbox" checked={isDone} onChange={handleCheckboxChange} disabled={isFutureDate} />
         </div>
     );
 }
