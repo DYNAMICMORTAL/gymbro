@@ -12,3 +12,9 @@
     margin-top: 0.2em;
     margin-left: 0.5em;
 }
+
+@media screen and (max-width: 768px) {
+    .logoText {
+        font-size: 2em;
+    }
+}
