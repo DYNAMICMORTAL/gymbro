@@ -13,6 +13,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function Home() {
   return (
     <>
+      <Analytics/>
+      <SpeedInsights/>
       <Navbar></Navbar>
       <Weights></Weights>
       <div className={styles.flexContainer}>
