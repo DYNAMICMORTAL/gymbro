@@ -7,6 +7,7 @@ import Weights from "../../components/Weights";
 import CalenderSection from "../../components/CalenderSection";
 import { cn } from "@/lib/utils"
 import Routine from "../../components/Routine";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
