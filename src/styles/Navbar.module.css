@@ -1,0 +1,14 @@
+.navigationBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoText {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #000;
+    text-decoration: none;
+    margin-top: 0.2em;
+    margin-left: 0.5em;
+}

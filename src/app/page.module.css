@@ -228,3 +228,8 @@
     transform: rotate(0deg);
   }
 }
+
+.routineSection {
+  max-width: 90%;
+  margin: auto;
+}
